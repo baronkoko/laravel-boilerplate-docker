@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['2943305.uj543099.web.hosting-test.net'],
+    'allowed_origins' => ['localhost'],
 
     'allowed_origins_patterns' => [],
 

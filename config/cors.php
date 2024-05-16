@@ -15,10 +15,9 @@ return [
     |
     */
 
-    // 'paths' => ['api/*', 'sanctum/csrf-cookie'],
-    'paths' => ['test'],
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
 
-    'allowed_methods' => ['DELETE'],
+    'allowed_methods' => ['*'],
 
     'allowed_origins' => ['localhost'],
 

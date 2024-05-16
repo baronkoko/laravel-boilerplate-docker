@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Domains\Api\Http\Controllers\TestController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,4 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::get('/test', function (Request $request) {
-    return "DDDD";
-});
+Route::get('/test', [TestController::class, 'index']);

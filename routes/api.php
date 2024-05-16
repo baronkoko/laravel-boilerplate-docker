@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Domains\Auth\Http\Controllers\Api\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,4 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::get('/test', function (Request $request) {
-    return "DDDD";
-});
+Route::get('/test', [UserController::class, 'getUser']);

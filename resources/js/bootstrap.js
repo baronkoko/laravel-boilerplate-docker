@@ -1,5 +1,5 @@
-window._ = require('lodash');
-window.Swal = require('sweetalert2');
+window._ = require("lodash");
+window.Swal = require("sweetalert2");
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -8,10 +8,10 @@ window.Swal = require('sweetalert2');
  */
 
 try {
-    window.Popper = require('popper.js').default;
-    window.$ = window.jQuery = require('jquery');
+    window.Popper = require("popper.js").default;
+    window.$ = window.jQuery = require("jquery");
 
-    require('bootstrap');
+    require("bootstrap");
 } catch (e) {}
 
 /**
@@ -20,9 +20,29 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = require('axios');
+window.axios = require("axios");
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common = {
+    "X-Requested-With": "XMLHttpRequest",
+    Authorization: "Bearer CMDQgP2Pi11MuG59xQuPVRxOZ330RbnHu3wAgM2a",
+    Accept: "application/json",
+};
+
+window.axios.defaults.withCredentials = true;
+window.axios.defaults.withXSRFToken = true;
+
+async function init() {
+    // await window.axios.get("/sanctum/csrf-cookie").then((response) => {
+    //     console.log(response);
+    // });
+
+    const user = await window.axios({
+        method: "get",
+        url: "/api/user",
+    });
+}
+
+init();
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
